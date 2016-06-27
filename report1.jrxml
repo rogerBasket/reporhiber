@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="99c3ab1e-7a35-465b-b74a-701186f2127b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="idUsuario" class="java.lang.Integer"/>
+	<field name="user" class="java.lang.String"/>
+	<field name="cumple" class="java.util.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="146" y="26" width="264" height="20" uuid="41abb20f-2ed5-4687-a7b4-d2e34282028a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Lista de nombre con un reporte de una unica columna]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="59" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="31" y="25" width="65" height="14" backcolor="#DCCECE" uuid="f80054ae-5c3d-4aca-b6df-789ad8dfaf54"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[IdUsuario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="115" y="25" width="50" height="14" backcolor="#DCCECE" uuid="682a60a3-cbc0-4d3a-b80a-ad3d07214d53"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[User]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="185" y="25" width="84" height="14" backcolor="#DCCECE" uuid="3fa7aa00-c184-4d1d-96c5-713347e543bc"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Cumple]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="31" y="0" width="65" height="20" uuid="1a016317-123e-4977-a4a1-376fac95dd1e"/>
+				<textFieldExpression><![CDATA[$F{idUsuario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="115" y="0" width="50" height="20" uuid="38f6be36-96ad-4456-8eec-e231c66a9f1a"/>
+				<textFieldExpression><![CDATA[$F{user}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="185" y="0" width="84" height="20" uuid="af199453-8b12-4297-b414-2b205a73137f"/>
+				<textFieldExpression><![CDATA[(new SimpleDateFormat("dd-MM-yyyy").format($F{cumple}))]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
